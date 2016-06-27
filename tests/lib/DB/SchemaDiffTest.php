@@ -84,6 +84,11 @@ class SchemaDiffTest extends TestCase {
 
 		// no sql statement is expected
 		$sqls = $diff->toSql($this->connection->getDatabasePlatform());
+		if (count($sqls) > 0) {
+			foreach ($sqls as $sql) {
+				echo $sql;
+			}
+		}
 		$this->assertEquals([], $sqls);
 	}
 
