@@ -85,6 +85,7 @@ class SchemaDiffTest extends TestCase {
 		// no sql statement is expected
 		$sqls = $diff->toSql($this->connection->getDatabasePlatform());
 		if (count($sqls) > 0) {
+			print_r($diff->changedTables);
 			foreach ($sqls as $sql) {
 				echo $sql;
 			}
@@ -97,6 +98,7 @@ class SchemaDiffTest extends TestCase {
 			'explicit test on autoincrement' => [file_get_contents(__DIR__ . '/schemDiffData/autoincrement.xml')],
 			'explicit test on clob' => [file_get_contents(__DIR__ . '/schemDiffData/clob.xml')],
 			'explicit test on unsigned' => [file_get_contents(__DIR__ . '/schemDiffData/unsigned.xml')],
+			'explicit test on default -1' => [file_get_contents(__DIR__ . '/schemDiffData/default-1.xml')],
 			'testing core schema' => [file_get_contents(__DIR__ . '/schemDiffData/core.xml')],
 		];
 	}
