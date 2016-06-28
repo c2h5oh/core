@@ -32,6 +32,7 @@
 				<name>key</name>
 				<type>text</type>
 				<notnull>true</notnull>
+				<default>(stupid text)</default>
 				<length>64</length>
 			</field>
 
